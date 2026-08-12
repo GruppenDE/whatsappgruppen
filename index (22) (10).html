@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Altersüberprüfung</title>
+</head>
+
+<body>
+ <video id="bgVideo" class="video-background" autoplay loop muted playsinline preload="auto" volume="0">
+    <source src="https://files.catbox.moe/1l6hnc.mp4" type="video/mp4">
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-laser-lights-background-32111-large.mp4" type="video/mp4">
+ </video>
+
+ <div class="container" id="mainContainer">
+  <div class="icon-container">
+   <span>⚠️</span>
+  </div>
+  <h1 id="title">Verifizierung erforderlich🔒</h1>
+  <p id="description">Um Zugang zu exklusiven WhatsApp-Gruppen zu erhalten und mit echten Frauen zu chatten, bestätigen bitte, dass volljährig sind, und schließen Ihre kostenlose Registrierung ab, indem Ihr Konto über Ihre E-Mail-Adresse aktivieren.</p>
+  
+  <div class="btn-group" id="initialButtons">
+   <button onclick="startLoading()" class="btn btn-yes">Ich bin volljährig</button>
+   <a href="#" id="btnUnder21" class="btn btn-no">Ich bin minderjährig</a>
+  </div>
+
+  <div id="loadingContainer" style="display:none; margin-top:20px;">
+   <div class="progress-bar">
+    <div class="progress-fill"></div>
+   </div>
+   <p style="margin-top:10px; font-size: 14px;">Inhalt wird geladen...</p>
+  </div>
+
+  <div class="btn-group" id="qualificationButtons" style="display:none;">
+   <!-- Texto en negro -->
+   <p class="black-text">Sind Sie bereit, sich zu registrieren, um Zugang zu WhatsApp-Gruppen zu erhalten?</p>
+   <a href="https://le2pmr8.lightheartedtrust.org/mpr2g3v" class="btn btn-yes">Ich möchte den Gruppen beitreten</a>
+   <button onclick="location.reload()" class="btn btn-no">Nein, danke</button>
+  </div>
+
+  <div class="footer-text" style="font-size: 13px !important; margin-top: 25px; color: #d32f2f; font-weight: 800;">
+   Wichtig!! Aktivieren Sie Ihr Konto über Ihre E-Mail-Adresse sonst werden Sie nicht automatisch akzeptiert in Gruppen aufgenommen.
+  </div>
+ </div>
+</body>
+
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { display: flex; justify-content: center; align-items: center; height: 100vh; padding: 20px; overflow: hidden; position: relative; }
+    .video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+    .container { 
+        max-width: 450px; width: 100%; 
+        background: rgba(255, 255, 255, 0.6); 
+        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        padding: 40px 30px; border-radius: 16px; text-align: center; 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+        border: 1px solid rgba(255, 255, 255, 0.3); z-index: 1; 
+    }
+    @media (min-width: 768px) { .container { max-width: 600px; padding: 60px 50px; } }
+    
+    .black-text { 
+        font-weight: 800 !important; 
+        color: #000000 !important; 
+        margin-bottom: 20px;
+    }
+
+    .progress-bar { width: 100%; height: 10px; background: #ddd; border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: #25d366; width: 0%; transition: width 1.5s ease-in-out; }
+
+    .icon-container { margin-bottom: 25px; display: flex; justify-content: center; gap: 10px; }
+    .icon-container span { font-size: 6rem; line-height: 1; }
+    h1 { font-size: 24px; margin-bottom: 15px; color: #000; }
+    p { font-size: 15px; color: #222; margin-bottom: 30px; font-weight: 500; }
+    .btn { display: block; width: 100%; padding: 16px; font-size: 16px; font-weight: 600; border-radius: 8px; border: none; cursor: pointer; text-decoration: none; transition: 0.2s; }
+    .btn-yes { background-color: #25d366; color: #ffffff; }
+    .btn-yes:hover { background-color: #20ba56; }
+    .btn-no { background: none; color: #444; margin-top: 15px; text-decoration: underline; font-size: 14px; }
+</style>
+
+<script>
+    function startLoading() {
+        document.getElementById('initialButtons').style.display = 'none';
+        document.getElementById('loadingContainer').style.display = 'block';
+        
+        setTimeout(() => {
+            document.querySelector('.progress-fill').style.width = '100%';
+        }, 100);
+
+        setTimeout(() => {
+            document.getElementById('loadingContainer').style.display = 'none';
+            document.getElementById('qualificationButtons').style.display = 'flex';
+            document.getElementById('qualificationButtons').style.flexDirection = 'column';
+        }, 1700);
+    }
+
+    document.getElementById('btnUnder21').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        alert("Sie können sich einfach mit dem Alter von 22 Jahren registrieren.");
+    });
+</script>
+</html>
